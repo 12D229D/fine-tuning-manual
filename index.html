@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual y Guía de Fine-Tuning</title>
+    <meta name="description" content="Guía interactiva SPA para entender, implementar y mantener modelos de fine-tuning con tecnologías web nativas.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="brand">
+                <div class="brand-icon">FT</div>
+                <div class="brand-text">
+                    <h1>Fine-Tuning</h1>
+                    <span>Manual HTML5 & Fine-Tuning</span>
+                </div>
+            </div>
+
+            <!-- Search -->
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Buscar en el manual...">
+            </div>
+
+            <!-- Reading Progress -->
+            <div class="progress-card">
+                <div class="progress-header">
+                    <span>Progreso del Manual</span>
+                    <span id="progress-val">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progress-fill" class="progress-bar-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="sidebar-nav">
+            <div class="nav-group">
+                <div class="nav-group-title">Introducción</div>
+                <a class="nav-item active" data-target="inicio">
+                    <span>🚀</span>
+                    <span class="nav-text">Inicio y Resumen</span>
+                    <span class="badge">01</span>
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-title">Fundamentos</div>
+                <a class="nav-item" data-target="conceptos">
+                    <span>🧠</span>
+                    <span class="nav-text">Conceptos Clave</span>
+                    <span class="badge">02</span>
+                </a>
+                <a class="nav-item" data-target="arquitectura">
+                    <span>🏗️</span>
+                    <span class="nav-text">Arquitectura</span>
+                    <span class="badge">03</span>
+                </a>
+                <a class="nav-item" data-target="tecnologias">
+                    <span>🛠️</span>
+                    <span class="nav-text">Tecnologías</span>
+                    <span class="badge">04</span>
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-title">Práctica</div>
+                <a class="nav-item" data-target="pipeline">
+                    <span>🔄</span>
+                    <span class="nav-text">Pipeline de Fine-Tuning</span>
+                    <span class="badge">05</span>
+                </a>
+                <a class="nav-item" data-target="evaluacion">
+                    <span>📊</span>
+                    <span class="nav-text">Evaluación</span>
+                    <span class="badge">06</span>
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-group-title">Demo Interactiva</div>
+                <a class="nav-item" data-target="demo">
+                    <span>🔬</span>
+                    <span class="nav-text">Fine-Tuning Playground</span>
+                    <span class="badge">WIZARD</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+            <button id="theme-toggle-btn" class="theme-toggle-btn">
+                <span id="theme-icon">🌙</span>
+                <span id="theme-text">Modo Oscuro</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <div class="main-wrapper">
+        <header class="top-header">
+            <button id="mobile-toggle-btn" class="mobile-toggle" aria-label="Abrir menú">☰</button>
+            <div class="header-breadcrumbs">
+                <span>Manual Fine-Tuning</span>
+                <span>/</span>
+                <span id="current-crumb" class="active-crumb">Inicio y Resumen</span>
+            </div>
+            <div class="header-actions">
+                <span class="header-tag">HTML5 / Fine-Tuning / LLM</span>
+            </div>
+        </header>
+
+        <main class="content-body">
+
+            <!-- ================= SECCIÓN: INICIO ================= -->
+            <section id="inicio" class="doc-section active">
+                <div class="section-header">
+                    <span class="section-tag">Bienvenido</span>
+                    <h1 class="section-title">Manual y Guía de Fine-Tuning</h1>
+                    <p class="section-description">
+                        Una referencia completa, interactiva y estructurada para entender, implementar y mantener modelos de fine-tuning con tecnologías web nativas.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>🎯 Objetivo de este Manual</h2>
+                    <p>
+                        Fine-tuning es el proceso de adaptar un modelo de lenguaje preentrenado a un caso de uso específico, mejorando su precisión y relevancia. Este manual explica los conceptos clave, la arquitectura, las tecnologías y el pipeline de fine-tuning.
+                    </p>
+
+                    <div class="cards-grid">
+                        <div class="card">
+                            <span class="card-icon">🧠</span>
+                            <h3 class="card-title">Conceptos</h3>
+                            <p class="card-desc">Fine-tuning, LoRA, PEFT, y métricas de evaluación.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-icon">🏗️</span>
+                            <h3 class="card-title">Arquitectura</h3>
+                            <p class="card-desc">Pipeline de fine-tuning y componentes clave.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-icon">🛠️</span>
+                            <h3 class="card-title">Tecnologías</h3>
+                            <p class="card-desc">Python, Hugging Face Transformers, LoRA, PEFT, y CUDA.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-icon">🔬</span>
+                            <h3 class="card-title">Playground</h3>
+                            <p class="card-desc">Demo interactiva para experimentar con fine-tuning.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout info">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-content">
+                        <h4>Sugerencia de navegación</h4>
+                        <p>Usa el menú lateral o la búsqueda en tiempo real. Marca cada capítulo como completado para medir tu avance. El progreso y el tema se guardan en tu navegador (localStorage).</p>
+                    </div>
+                </div>
+
+                <div class="callout warning">
+                    <div class="callout-icon">⚠️</div>
+                    <div class="callout-content">
+                        <h4>Aviso de seguridad</h4>
+                        <p>La demo «Fine-Tuning Playground» <strong>no ejecuta</strong> fine-tuning real ni accede al sistema de ficheros; simula un entorno de fine-tuning con datos de ejemplo.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: CONCEPTOS ================= -->
+            <section id="conceptos" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Capítulo 01</span>
+                    <h1 class="section-title">Conceptos Clave</h1>
+                    <p class="section-description">
+                        Fine-tuning, LoRA, PEFT, y métricas de evaluación.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>1. ¿Qué es Fine-Tuning?</h2>
+                    <p>Fine-tuning es el proceso de adaptar un modelo de lenguaje preentrenado a un caso de uso específico, mejorando su precisión y relevancia. Se realiza mediante el ajuste de los pesos del modelo con datos específicos.</p>
+
+                    <div class="skill-anatomy">
+                        <div class="skill-anatomy-block">
+                            <div class="skill-anatomy-icon">🧠</div>
+                            <div class="skill-anatomy-label">Fine-Tuning</div>
+                            <div class="skill-anatomy-desc">Ajuste de pesos con datos específicos.</div>
+                        </div>
+                        <div class="skill-anatomy-connector">├─</div>
+                        <div class="skill-anatomy-block">
+                            <div class="skill-anatomy-icon">🔄</div>
+                            <div class="skill-anatomy-label">LoRA</div>
+                            <div class="skill-anatomy-desc">Optimización de fine-tuning.</div>
+                        </div>
+                        <div class="skill-anatomy-connector">└─</div>
+                        <div class="skill-anatomy-block">
+                            <div class="skill-anatomy-icon">📊</div>
+                            <div class="skill-anatomy-label">Evaluación</div>
+                            <div class="skill-anatomy-desc">Métricas de rendimiento.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>2. Principios fundamentales</h2>
+                    <ul>
+                        <li><strong>Adaptación</strong>: ajustar el modelo a casos de uso específicos.</li>
+                        <li><strong>Optimización</strong>: usar técnicas como LoRA y PEFT para mejorar el rendimiento.</li>
+                        <li><strong>Evaluación</strong>: medir la precisión y relevancia del modelo.</li>
+                    </ul>
+                </div>
+
+                <div class="completion-box">
+                    <span>¿Comprendes qué es fine-tuning y sus principios?</span>
+                    <button class="completion-btn" data-section="conceptos">Marcar como Completado</button>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: ARQUITECTURA ================= -->
+            <section id="arquitectura" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Capítulo 02</span>
+                    <h1 class="section-title">Arquitectura</h1>
+                    <p class="section-description">
+                        Pipeline de fine-tuning y componentes clave.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>1. Pipeline de Fine-Tuning</h2>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span class="code-lang">Pipeline de Fine-Tuning</span>
+                            <button class="copy-btn">📋 Copiar</button>
+                        </div>
+                        <pre><code>+-------------------+     +-------------------+     +-------------------+
+|                   |     |                   |     |                   |
+|   Datos           | --> |   Pipeline        | --> |   Modelo LLM      |
+|                   |     |                   |     |                   |
++-------------------+     +-------------------+     +-------------------+</code></pre>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2>2. Componentes Clave</h2>
+                    <ul>
+                        <li><strong>Datos</strong>: entrada para fine-tuning.</li>
+                        <li><strong>Pipeline</strong>: proceso de fine-tuning.</li>
+                        <li><strong>Modelo LLM</strong>: procesa las solicitudes.</li>
+                    </ul>
+                </div>
+
+                <div class="completion-box">
+                    <span>¿Entiendes la arquitectura del pipeline de fine-tuning?</span>
+                    <button class="completion-btn" data-section="arquitectura">Marcar como Completado</button>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: TECNOLOGIAS ================= -->
+            <section id="tecnologias" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Capítulo 03</span>
+                    <h1 class="section-title">Tecnologías</h1>
+                    <p class="section-description">
+                        Python, Hugging Face Transformers, LoRA, PEFT, y CUDA.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>1. Tecnologías Clave</h2>
+                    <table style="width:100%; border-collapse: collapse; margin: 1rem 0; font-size:0.9rem;">
+                        <thead>
+                            <tr style="background-color: var(--bg-tertiary); text-align: left;">
+                                <th style="padding:0.7rem; border:1px solid var(--border-color);">Tecnología</th>
+                                <th style="padding:0.7rem; border:1px solid var(--border-color);">Versión</th>
+                                <th style="padding:0.7rem; border:1px solid var(--border-color);">Propósito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color); font-weight:600;">Python</td>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color);">3.11+</td>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color);">Compatibilidad con Hugging Face.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color); font-weight:600;">Hugging Face Transformers</td>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color);">Última</td>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color);">Fine-tuning.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color); font-weight:600;">LoRA</td>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color);">Última</td>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color);">Optimización de fine-tuning.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color); font-weight:600;">CUDA</td>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color);">Última</td>
+                                <td style="padding:0.7rem; border:1px solid var(--border-color);">Procesamiento rápido.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="completion-box">
+                    <span>¿Sabrías qué tecnologías son clave para fine-tuning?</span>
+                    <button class="completion-btn" data-section="tecnologias">Marcar como Completado</button>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: PIPELINE ================= -->
+            <section id="pipeline" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Capítulo 04</span>
+                    <h1 class="section-title">Pipeline de Fine-Tuning</h1>
+                    <p class="section-description">
+                        Implementación del pipeline de fine-tuning.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>1. Pasos del Pipeline</h2>
+                    <ol>
+                        <li><strong>Preparación de Datos</strong>: recolección y limpieza de datos.</li>
+                        <li><strong>Configuración del Modelo</strong>: carga del modelo preentrenado.</li>
+                        <li><strong>Fine-Tuning</strong>: ajuste de pesos con datos específicos.</li>
+                        <li><strong>Evaluación</strong>: medición de métricas de rendimiento.</li>
+                    </ol>
+                </div>
+
+                <div class="content-block">
+                    <h2>2. Ejemplo de Código</h2>
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span class="code-lang">Python</span>
+                            <button class="copy-btn">📋 Copiar</button>
+                        </div>
+                        <pre><code>from transformers import AutoModelForSequenceClassification, AutoTokenizer, Trainer, TrainingArguments
+
+# Cargar modelo y tokenizer
+model_name = "bert-base-uncased"
+model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+# Configuración del entrenamiento
+training_args = TrainingArguments(
+    output_dir="./results",
+    per_device_train_batch_size=8,
+    num_train_epochs=3,
+    save_steps=10_000,
+    save_total_limit=2,
+)
+
+# Entrenamiento
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=train_dataset,
+    eval_dataset=eval_dataset,
+)
+
+# Fine-tuning
+trainer.train()</code></pre>
+                    </div>
+                </div>
+
+                <div class="completion-box">
+                    <span>¿Entiendes los pasos del pipeline de fine-tuning?</span>
+                    <button class="completion-btn" data-section="pipeline">Marcar como Completado</button>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: EVALUACION ================= -->
+            <section id="evaluacion" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Capítulo 05</span>
+                    <h1 class="section-title">Evaluación</h1>
+                    <p class="section-description">
+                        Métricas de evaluación y validación del modelo.
+                    </p>
+                </div>
+
+                <div class="content-block">
+                    <h2>1. Métricas Clave</h2>
+                    <ul>
+                        <li><strong>Precisión</strong>: porcentaje de respuestas correctas.</li>
+                        <li><strong>Recall</strong>: capacidad de identificar todos los casos positivos.</li>
+                        <li><strong>F1-Score</strong>: media armónica de precisión y recall.</li>
+                    </ul>
+                </div>
+
+                <div class="content-block">
+                    <h2>2. Validación del Modelo</h2>
+                    <p>La validación del modelo se realiza mediante la evaluación de métricas en un conjunto de datos de prueba. Esto permite medir la precisión y relevancia del modelo en casos de uso reales.</p>
+                </div>
+
+                <div class="completion-box">
+                    <span>¿Entiendes las métricas de evaluación y la validación del modelo?</span>
+                    <button class="completion-btn" data-section="evaluacion">Marcar como Completado</button>
+                </div>
+            </section>
+
+            <!-- ================= SECCIÓN: DEMO ================= -->
+            <section id="demo" class="doc-section">
+                <div class="section-header">
+                    <span class="section-tag">Demo Interactiva</span>
+                    <h1 class="section-title">Fine-Tuning Playground</h1>
+                    <p class="section-description">
+                        Demo interactiva para experimentar con fine-tuning.
+                    </p>
+                </div>
+
+                <div class="wizard-container">
+                    <div class="demo-controls">
+                        <label for="model-selector" class="demo-label">Selecciona un modelo:</label>
+                        <select id="model-selector" class="demo-select">
+                            <option value="bert">BERT</option>
+                            <option value="roberta">RoBERTa</option>
+                            <option value="distilbert">DistilBERT</option>
+                        </select>
+                        <button id="load-model-btn" class="btn btn-primary">🔍 Cargar Modelo</button>
+                    </div>
+
+                    <div class="model-render" id="model-render" aria-live="polite">
+                        <p class="model-render-empty">Pulsa «Cargar Modelo» para renderizar el modelo seleccionado.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</div>
+
+<!-- Main JS -->
+<script src="js/app.js"></script>
+</body>
+</html>
